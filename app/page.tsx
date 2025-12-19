@@ -186,24 +186,12 @@ export default function HomePage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto">
               <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
-                <p className="text-purple-400 font-semibold mb-2">
-                  👤 Usuario Demo
-                </p>
-                <p className="text-sm text-slate-300">user@demo.com</p>
-                <p className="text-sm text-slate-400">User123!</p>
-              </div>
-              <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
-                <p className="text-indigo-400 font-semibold mb-2">
-                  👨‍💼 Administrador
-                </p>
-                <p className="text-sm text-slate-300">admin@soporte.com</p>
-                <p className="text-sm text-slate-400">Admin123!</p>
+                
               </div>
             </div>
           </div>
-
           <p className="text-slate-500 text-sm mt-8">
-            Sistema de Gestión de Tickets © 2025 - Arquitectura de Datos
+            Sistema de Gestión de Tickets © 2025 - Arquitectura de Datos - Ame 
           </p>
         </div>
       </div>

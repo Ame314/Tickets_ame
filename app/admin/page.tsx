@@ -68,7 +68,7 @@ export default function AdminPage() {
   const cargarDatos = async (token: string) => {
     try {
       // Cargar estadísticas
-      const resStats = await fetch("http://localhost:8000/admin/estadisticas", {
+      const resStats = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/estadisticas`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (resStats.ok) {
@@ -77,7 +77,7 @@ export default function AdminPage() {
       }
 
       // Cargar tickets
-      const resTickets = await fetch("http://localhost:8000/tickets", {
+      const resTickets = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tickets`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (resTickets.ok) {
@@ -86,7 +86,7 @@ export default function AdminPage() {
       }
 
       // Cargar usuarios
-      const resUsuarios = await fetch("http://localhost:8000/admin/usuarios", {
+      const resUsuarios = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/usuarios`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (resUsuarios.ok) {

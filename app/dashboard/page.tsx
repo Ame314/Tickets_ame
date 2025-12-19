@@ -62,8 +62,8 @@ export default function DashboardPage() {
   const cargarTickets = async (token: string, estado?: string) => {
     try {
       const url = estado && estado !== "todos" 
-        ? `http://localhost:8000/tickets?estado=${estado}`
-        : "http://localhost:8000/tickets";
+        ? `${process.env.NEXT_PUBLIC_API_URL}/tickets?estado=${estado}`
+        : `${process.env.NEXT_PUBLIC_API_URL}/tickets`;
 
       const res = await fetch(url, {
         headers: {
@@ -87,7 +87,7 @@ export default function DashboardPage() {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch("http://localhost:8000/tickets", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tickets`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

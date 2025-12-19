@@ -67,7 +67,7 @@ export default function TicketDetallePage() {
 
   const cargarTicket = async (token: string) => {
     try {
-      const resTicket = await fetch(`http://localhost:8000/tickets/${ticketId}`, {
+      const resTicket = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tickets/${ticketId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -78,7 +78,7 @@ export default function TicketDetallePage() {
         setPrioridadEdit(ticketData.prioridad);
       }
 
-      const resInteracciones = await fetch(`http://localhost:8000/tickets/${ticketId}/interacciones`, {
+      const resInteracciones = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tickets/${ticketId}/interacciones`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -98,7 +98,7 @@ export default function TicketDetallePage() {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch(`http://localhost:8000/tickets/${ticketId}/interacciones`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tickets/${ticketId}/interacciones`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -124,7 +124,7 @@ export default function TicketDetallePage() {
     const token = localStorage.getItem("token");
 
     try {
-      const res = await fetch(`http://localhost:8000/tickets/${ticketId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tickets/${ticketId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
