@@ -68,7 +68,7 @@ export default function AdminPage() {
   const cargarDatos = async (token: string) => {
     try {
       // Cargar estadísticas
-      const resStats = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/estadisticas`, {
+      const resStats = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/estadisticas`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (resStats.ok) {
