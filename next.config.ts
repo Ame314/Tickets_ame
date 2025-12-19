@@ -1,11 +1,13 @@
 import type { NextConfig } from "next";
 
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://api:8000'; // fallback para builds sin variable
+
 const nextConfig: NextConfig = {
   output: 'standalone',
   
-  // Variables de entorno públicas
+  // Variables de entorno públicas (usa fallback para evitar undefined en build)
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    NEXT_PUBLIC_API_URL: apiUrl,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
   },
   
@@ -14,7 +16,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_URL}/:path*`,
+        destination: `${apiUrl}/:path*`,
       },
     ];
   },
